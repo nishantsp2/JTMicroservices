@@ -1,0 +1,28 @@
+# to make this application as eureka client 
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost    
+
+
+
+
+
+##All the endpoint URL here . so change required you have to make it here not in any microservice
+microservice:
+  payment-service: 
+    endpoints:
+      endpoint:
+        uri: http://PAYMENT-SERVICE/payment/doPayment
+        
+  order-service:
+    endpoints:
+      endpoint:
+        uri:  http://ORDER-SERVICE/order/bookOrder   
+                     
+  
+       
